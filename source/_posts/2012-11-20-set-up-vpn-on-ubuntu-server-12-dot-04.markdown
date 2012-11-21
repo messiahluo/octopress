@@ -6,21 +6,21 @@ comments: true
 categories: [ubuntu] 
 ---
 
-####题外话
+## 题外话
 为什么要搭建VPN?这个,全世界哦不1/3个世界都知道为什么我就不解释了,为什么要写这个呢,一是前段时间折腾了很久没发现能一步到位的教程,再之记忆力不好怕下次出问题再忘了又得折腾.
 
-####过程
+## 过程
 
-##### 准备工作
+### 准备工作
 
 1.  购买并给VPS安装系统
 1.  用SSH连接到VPS
 1.  安装顺手的文本编辑器(Emacs,Vim,blabla其他的我不认识)
 1.  安装pptpd `apt-get install pptpd`
 
-##### 开始配置
+### 开始配置
 
-###### 配置 pptpd 
+#### 配置 pptpd 
 
 		sudo emacs /etc/pptpd.conf 
 
@@ -36,7 +36,7 @@ categories: [ubuntu]
         
 原因是我的路由器IP段也是192.168.0.*所以担心会有冲突（其实我也不知道会不会= =)
 
-###### 配置DNS
+#### 配置DNS
 
         sudo emacs /etc/ppp/pptpd-options
     
@@ -52,7 +52,7 @@ categories: [ubuntu]
     
 Google的DNS，如果VPS在国外的话，这个用起来是没问题的，如果在国内的话，你搭VPN做什么= =
 
-###### 添加VPN账号 ######
+#### 添加VPN账号 ######
 
         sudo emacs /etc/ppp/chap-secrets
 
@@ -62,7 +62,7 @@ Google的DNS，如果VPS在国外的话，这个用起来是没问题的，如�
         
 分别表示用户名 类型 密码 允许的ip地址
 
-###### IPv4重定向 ######
+#### IPv4重定向 ######
 
         emacs /tec/sysctl.conf
 
@@ -77,7 +77,7 @@ Google的DNS，如果VPS在国外的话，这个用起来是没问题的，如�
        
 如果看到输出结果就对了
 
-###### **iptables 配置** ######
+#### **iptables 配置** ######
 
 这一步是最重要也最容易出错的地方，我就是在这一步折腾了好几次，如果前面都配好了VPN是能连上的，但是连上之后是上不了网地。这些个命令在我看那个教程里面有点不一样，所以特别记录一下
 
@@ -105,5 +105,5 @@ Google的DNS，如果VPS在国外的话，这个用起来是没问题的，如�
 或者重启VPS测试看能不能自动启动，连上VPS，试试能不能科学上网就可以了。
         
 
-##### 引用 #####
+### 引用 #####
 [How to Set Up A VPN In A VPS](http://freenuts.com/how-to-set-up-a-vpn-in-a-vps/)
