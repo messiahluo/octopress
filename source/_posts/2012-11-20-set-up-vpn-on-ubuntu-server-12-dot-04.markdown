@@ -106,4 +106,4 @@ Google的DNS，如果VPS在国外的话，这个用起来是没问题的，如�
         
 
 ##### 引用 #####
-[How to Set Up A VPN In A VPS](http://jblevins.org/projects/markdown-mode/)
+[How to Set Up A VPN In A VPS](http://freenuts.com/how-to-set-up-a-vpn-in-a-vps/)
